@@ -2447,8 +2447,9 @@
 		padding-top:3.5em;		
 		border-radius: 5em;
 		margin:auto 2em;
-		border: 1px solid #e6e6e6; 
+		border: 1px solid #7dc2db; 
 		text-align: center;
+		background-color: #d6f4ff;
 	}
 		.innerbox > .icon:before{
 			font-size: 3em;
@@ -3649,7 +3650,7 @@
 /* Header */
 
 	#header {
-		background-color: #4696e5;
+		background-color: #007edf;
 		color: #d0e4f8;
 		padding: 4.5em 0 2.5em 0 ;
 		-moz-align-items: center;
