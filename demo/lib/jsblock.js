@@ -22,22 +22,23 @@
      *
      * @returns {undefined}
      */
-    function jsblock(element, options) {
+    function jsblock(element) {
         this.element = element;
         this.originalElement = element.cloneNode(true);
         this.enabled = true;
-        this.options = Object.assign({}, defaultOptions, options);
+        //this.options = Object.assign({}, defaultOptions, options);
+        this.options = defaultOptions;
         this.init();
     }
     jsblock.prototype = {
         init: function () {
             var consoleWrapper = this.createConsoleWrapper();
             if (this.options.runnable) {
-                consoleWrapper.append(this.createRunButton());
+                consoleWrapper.appendChild(this.createRunButton());
             }
-            consoleWrapper.append(this.createResetButton());
-            consoleWrapper.append(document.createTextNode(' \u00A0 '));            
-            consoleWrapper.append(this.createBacklink());
+            consoleWrapper.appendChild(this.createResetButton());
+            consoleWrapper.appendChild(document.createTextNode(' \u00A0 '));            
+            consoleWrapper.appendChild(this.createBacklink());
             this.element.parentNode.insertBefore(consoleWrapper, this.element.nextSibling);
             this.setupEditor(this.element);
         },

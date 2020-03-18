@@ -26,7 +26,7 @@
       return region.prefecture() + cn.company();
     };
 	  var address = function(){ 
-      return region.county() + cn.build() + cn.road();
+      return region.county(true) + cn.build() + cn.road();
     };
 
     var data = gen({
@@ -34,7 +34,11 @@
       id: use(id.val),
       name: use(cn.fullName),
       address: use(address),
-      company: use(company)
+      company: use(company),
+      zipcode: use(region.zipcode), 
+      phone: use(region.phone),      
+      longitude: use(region.longitude),
+      latitude: use(region.latitude)
     })
     console.log('Generated data:', JSON.stringify(data));
     </pre>
