@@ -1,0 +1,94 @@
+.jsblock-editor-wrapper {
+  position: relative;
+}
+
+.jsblock-editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.jsblock-console-text {
+  width: 100%;
+  display: inline-block;
+  word-break: break-all;
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+
+.jsblock-console-text.placeholder {
+  color: #666;
+}
+
+.ace_editor {
+  font-size: 1em !important;
+}
+
+.jsblock {
+  white-space: pre;
+}
+
+.jsblock-container {
+  border: 1px solid #AAA;
+}
+
+.jsblock-console {
+  border-top: 1px solid #CCC;
+  padding: 2px 2px 2px 8px;
+  margin-bottom: 3em;
+  line-height: 1.5em;
+  min-height: 3em;
+}
+
+a.jsblock-console-reset {
+  float: left;
+  margin-left: .3em;
+  line-height: 1.2em;
+  font-weight: bold;
+  padding: .6em 1em;
+}
+a.jsblock-console-reset:link, a.jsblock-console-reset:active, a.jsblock-console-reset:visited {
+  background-color:dodgerblue;
+  color: #FFF;
+}
+a.jsblock-console-reset:hover {
+  background-color:lightskyblue;
+}
+
+a.jsblock-console-run {
+  float: right;
+  margin-right: 1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  padding: .6em 1em;
+}
+a.jsblock-console-run:link, a.jsblock-console-run:active, a.jsblock-console-run:visited {
+  background-color: dodgerblue;
+  color: #FFF;
+}
+a.jsblock-console-run:hover {
+  background-color:lightskyblue;
+}
+
+a.jsblock-console-back {
+  float: left;
+  margin-left: 1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  padding: .6em 1em;
+}
+a.jsblock-console-back:link, a.jsblock-console-back:active, a.jsblock-console-back:visited {
+  background-color:turquoise;
+  color: #FFF;
+}
+a.jsblock-console-back:hover {
+  background-color:aquamarine;
+}
+
+.jsblock-console-run.disabled {
+  background-color: #DDD;
+  color: #000;
+  cursor: not-allowed;
+}

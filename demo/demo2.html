@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jsblock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+    <link type="text/css" rel="stylesheet" href="lib/jsblock.css">
+    <script src="../lib/shai.js"></script>
+    <script src="../lib/mock.js"></script>
+  </head>
+
+  <body>
+    <pre id="code">
+    var shai = new Shai();
+    var use = shai.use;
+    var gen = shai.gen;
+
+    var util = mock.util;
+    var cn = mock.cn;
+    var id = util.incre();
+
+    var data = gen({
+      setting: [1, true, 2],
+      id: use(id.val),
+      name: use(cn.fullName),
+      idcard: use(cn.idcard),
+      autocard: use(cn.autocard),
+      build: use(cn.build)
+    })
+    console.log('Generated data:', JSON.stringify(data));
+    </pre>
+    <script>
+      new jsblock(document.getElementById('code'));
+    </script>
+  </body>
+</html>

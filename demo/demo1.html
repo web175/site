@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jsblock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+    <link type="text/css" rel="stylesheet" href="lib/jsblock.css">
+    <script src="../lib/validator.js"></script>
+  </head>
+
+  <body>
+    <pre id="code">
+    var v = validator.default;
+    v.printout = true;
+
+    var rule = v.string.enum('admin','user','guest');
+    var result = v.validate('admin', rule);
+    console.log('enum:', result);
+
+    var data = {
+      name:'张三', 
+      hobby:[ {item:'唱歌' }, {item: '跳舞'} ],
+      place:[ { shows:11 }, { shows:5 } ]
+    };
+
+    var errHandler = function(obj){
+      console.log(obj.msgs.join(','));
+    };
+
+    result = v.validate(data, {
+      name: v.string.required.chinese.min(2).alias('姓名'),
+      hobby: [, {c: v.any.required.alias('爱好二')} ],
+      place: v.array.len(1).alias('出演次数').struct([ 
+          {shows: v.number.required.integer}
+        ]).error(errHandler)
+    });
+
+    console.log('deep object:', result);
+    </pre>
+    <script>
+      new jsblock(document.getElementById('code'));
+    </script>
+  </body>
+</html>
