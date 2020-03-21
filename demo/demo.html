@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jsblock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+    <link type="text/css" rel="stylesheet" href="lib/jsblock.css">
+    <script src="../lib/methods.js"></script>
+  </head>
+
+  <body>
+    <pre id="code">
+    console.log('url:', methods.url('http://sdaf.com:23'));
+    console.log('base64:', methods.base64('YWZkc2Zkc2FmZHNkZHNhJTIwZmFkc2YzMjQ5MzI0b2hkc2Foa2ZoJTYwMTMxMw=='));
+    console.log('datetime:', methods.datetime('2012-16-11 12:18:10'));
+    console.log('longitude:', methods.londms('113°56′02″'));
+    console.log('idcard:', methods.idcard('231085198403033418'));
+    </pre>
+    <script>
+      new jsblock(document.getElementById('code'));
+    </script>
+  </body>
+</html>
