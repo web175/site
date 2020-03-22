@@ -15,21 +15,18 @@
     var shai = new Shai();
     var use = shai.use;
     var gen = shai.gen;
-
-    var util = mock.util;
-    var cn = mock.cn;
-    var web = mock.web;
-    var date = mock.date;
-    var id = util.incre();
+    var id = mock.util.incre();
 
     var data = gen({
-      setting: [2, true, 2],
+      setting: {length:2, level:2},
       id: use(id.val),
-      account:use(web.account),
-      name: use(cn.fullName),
-      idcard: use(cn.idcard),
-      autocard: use(cn.autocard),
-      logintime: use(date.time)
+      account:use(mock.web.account),
+      weight:use(mock.rand.int, 45, 100),
+      name: use(mock.cn.fullName),
+      idcard: use(mock.cn.idcard),
+      autocard: use(mock.cn.autocard),
+      logintime: use(mock.date.time, '2000/10/01', new Date(), 'yyyy-MM-dd hh:mm:ss'),
+      remark: use(mock.text.repeat),
     })
     console.log('Generated data:', JSON.stringify(data));
     </pre>
