@@ -23,10 +23,10 @@
     var region = new Region(440000);
     var id = util.incre();
     var company = function(){ 
-      return region.prefecture() + cn.company();
+      return region.prefecture(true) + cn.company();
     };
 	  var address = function(){ 
-      return region.county(true) + cn.build() + cn.road();
+      return region.county() + cn.build() + cn.road();
     };
 
     var data = gen({
